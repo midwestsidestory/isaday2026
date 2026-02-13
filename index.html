@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>For Priya</title>
+    <title>Isabelle</title>
     <style type="text/css">
       * {
         box-sizing: border-box;
@@ -11,8 +11,8 @@
       body {
         margin: 0;
         padding: 0;
-        background: #cab68f;
-        font-family: "Courier New", Courier, mono;
+        background: #ffffff;
+        font-family: "Times New Roman", Times, serif;
       }
       .content-frame {
         width: 100%;
@@ -22,28 +22,145 @@
       }
       .audio-player {
         position: fixed;
-        bottom: 0;
-        right: 0;
-        background: #663300;
+        bottom: 1rem;
+        right: 1rem;
+        background: #013220;
         color: #ffffff;
         padding: 0.5rem 1rem;
-        font-family: "Courier New", Courier, mono;
+        font-family: "Times New Roman", Times, serif;
         font-size: 12px;
         border: 2px solid #000000;
-        max-width: 280px;
+        max-width: min(280px, calc(100vw - 2rem));
+        min-width: 200px;
+        width: auto;
         z-index: 1000;
+        display: block;
+        box-sizing: border-box;
       }
       .audio-player .now-playing {
         font-weight: 600;
         margin-bottom: 0.25rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .audio-player .arrow-controls {
+        margin-top: 0.35rem;
+        display: flex;
+        gap: 0.35rem;
+        justify-content: center;
+      }
+      .audio-player .arrow-button {
+        padding: 0.15rem 0.35rem;
+        background: #013220;
+        color: #ffffff;
+        border: 1px solid #000000;
+        cursor: pointer;
+        font-family: "Times New Roman", Times, serif;
+        font-size: 10px;
+        font-weight: 600;
+        min-width: 26px;
+        line-height: 1.2;
+        text-align: center;
+      }
+      .audio-player .arrow-button:hover {
+        background: #011a15;
       }
       .audio-player audio {
         width: 100%;
         height: 32px;
         margin-top: 0.25rem;
+        display: block;
       }
       .audio-player audio::-webkit-media-controls-panel {
-        background: #663300;
+        background: #013220;
+      }
+      .audio-player audio::-webkit-media-controls-play-button {
+        display: block;
+      }
+      .audio-player audio::-webkit-media-controls-timeline {
+        display: block;
+      }
+      .audio-player audio::-webkit-media-controls-current-time-display {
+        display: block;
+      }
+      .audio-player audio::-webkit-media-controls-time-remaining-display {
+        display: block;
+      }
+      .audio-player .scrub-wrap {
+        margin-top: 0.35rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .audio-player .scrub-bar {
+        flex: 1;
+        -webkit-appearance: none;
+        appearance: none;
+        height: 6px;
+        background: rgba(255, 255, 255, 0.3);
+        border: none;
+        cursor: pointer;
+      }
+      .audio-player .scrub-bar::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 12px;
+        height: 12px;
+        background: #fff;
+        border: 1px solid #000;
+        cursor: pointer;
+      }
+      .audio-player .scrub-bar::-moz-range-thumb {
+        width: 12px;
+        height: 12px;
+        background: #fff;
+        border: 1px solid #000;
+        cursor: pointer;
+      }
+      .audio-player .scrub-time {
+        font-size: 10px;
+        min-width: 4ch;
+      }
+      .audio-player .player-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 0.25rem;
+      }
+      .audio-player .player-header .now-playing {
+        margin-bottom: 0;
+        flex: 1;
+        min-width: 0;
+      }
+      .audio-player .minimize-btn,
+      .audio-player .restore-btn {
+        padding: 0.1rem 0.4rem;
+        background: #013220;
+        color: #fff;
+        border: 1px solid #000;
+        cursor: pointer;
+        font-family: "Times New Roman", Times, serif;
+        font-size: 10px;
+        line-height: 1.2;
+        flex-shrink: 0;
+      }
+      .audio-player .minimize-btn:hover,
+      .audio-player .restore-btn:hover {
+        background: #011a15;
+      }
+      .audio-player.minimized .player-expandable {
+        display: none;
+      }
+      .audio-player .restore-btn {
+        display: none;
+      }
+      .audio-player.minimized .minimize-btn {
+        display: none;
+      }
+      .audio-player.minimized .restore-btn {
+        display: inline-block;
       }
       .lang-toggle {
         position: fixed;
@@ -51,10 +168,10 @@
         right: 0;
         z-index: 1000;
         padding: 0.4rem 0.8rem;
-        font-family: "Courier New", Courier, mono;
+        font-family: "Times New Roman", Times, serif;
         font-size: 12px;
         font-weight: 600;
-        background: #663300;
+        background: #013220;
         color: #fff;
         border: 2px solid #000;
         border-radius: 999px;
@@ -62,7 +179,7 @@
         margin: 0.5rem;
       }
       .lang-toggle:hover {
-        background: #552200;
+        background: #011a15;
       }
     </style>
   </head>
@@ -72,7 +189,7 @@
       name="main"
       id="main-frame"
       class="content-frame"
-      src="home.html"
+      src="welcome.html"
       onload="
         try {
           this.contentWindow.applyTranslations &&
@@ -85,15 +202,33 @@
       (function () {
         var params = new URLSearchParams(location.search);
         var page = params.get("page");
-        if (page) {
-          document.getElementById("main-frame").src = page;
+        var frame = document.getElementById("main-frame");
+        if (page && page !== "home.html") {
+          frame.src = page;
+        } else {
+          frame.src = "welcome.html";
         }
       })();
     </script>
 
-    <div class="audio-player" id="player-box">
-      <div class="now-playing" id="now-playing">—</div>
-      <audio id="global-audio" controls></audio>
+    <div class="audio-player" id="player-box" style="display: none;">
+      <div class="player-header">
+        <div class="now-playing" id="now-playing">—</div>
+        <button class="minimize-btn" id="minimize-btn" type="button" title="Minimize">−</button>
+        <button class="restore-btn" id="restore-btn" type="button" title="Restore">▲</button>
+      </div>
+      <div class="player-expandable">
+        <audio id="global-audio" controls style="display: block; width: 100%;"></audio>
+        <div class="scrub-wrap">
+          <span class="scrub-time" id="scrub-current">0:00</span>
+          <input type="range" class="scrub-bar" id="scrub-bar" min="0" max="100" value="0" step="0.1" />
+          <span class="scrub-time" id="scrub-duration">0:00</span>
+        </div>
+        <div class="arrow-controls">
+          <button class="arrow-button" id="prev-button">◀◀</button>
+          <button class="arrow-button" id="next-button">▶▶</button>
+        </div>
+      </div>
     </div>
 
     <script>
@@ -101,15 +236,16 @@
         function updateToggleLabel() {
           var lang = localStorage.getItem("vday_lang") || "en";
           document.getElementById("lang-toggle").textContent =
-            lang === "en" ? "EN" : "FR";
+            lang === "en" ? "EN" : "KO";
         }
         document
           .getElementById("lang-toggle")
           .addEventListener("click", function () {
             var lang = localStorage.getItem("vday_lang") || "en";
-            var newLang = lang === "en" ? "fr" : "en";
+          var newLang = lang === "en" ? "ko" : "en";
             localStorage.setItem("vday_lang", newLang);
             updateToggleLabel();
+            updateNowPlayingLanguage();
             var frame = document.getElementById("main-frame");
             if (frame.contentWindow) {
               if (frame.contentWindow.applyTranslations) {
@@ -122,13 +258,133 @@
           });
         updateToggleLabel();
       })();
-      window.playSong = function (src, title) {
+      var songs = [
+        { src: "songs/song1.mp3", title: "Aurora - Quiet Light", titleKo: "오로라 - 조용한 빛" },
+        { src: "songs/song2.mp3", title: "Im On Fire - Bruce Springstein", titleKo: "불타오르네 - 브루스 스프링스틴" },
+        { src: "songs/song3.mp3", title: "Walking On Air - King Crimson", titleKo: "Walking On Air - 킹 크림슨" },
+        { src: "songs/song4.mp3", title: "As The World Falls Down - David Bowie", titleKo: "세상이 무너져 내려와도 - 데이비드 보위" },
+        { src: "songs/song5.mp3", title: "RACHEL CUT - Dean Blunt", titleKo: "RACHEL CUT - 딘 블런트" },
+        { src: "songs/song6.mp3", title: "Surrender - Suicide", titleKo: "항복 - 슈사이드" },
+        { src: "songs/song7.mp3", title: "Halo - The Cure", titleKo: "후광 - 더 큐어" },
+        { src: "songs/song8.mp3", title: "Give You My Lovin - Mazzy Star", titleKo: "내 사랑을 줄게 - 매지 스타" },
+        { src: "songs/song9.mp3", title: "Streets of Philadelphia - Bruce Springstein", titleKo: "필라델피아의 거리 - 브루스 스프링스틴" },
+        { src: "songs/song10.mp3", title: "Here I Am - The Hellp", titleKo: "나 여기 있어 - 더 헬프" },
+        { src: "songs/song11.mp3", title: "Simulation Swarm - Big Thief", titleKo: "시뮬레이션 군무 - 빅 씨프" },
+        { src: "songs/song12.mp3", title: "The Rot - Dean Blunt", titleKo: "부패 - 딘 블런트" },
+        { src: "songs/song13.mp3", title: "Please Stay - The Cryin Shames", titleKo: "제발 남아줘 - 더 크라이인 셰임스" },
+        { src: "songs/song14.mp3", title: "Paul - Big Thief", titleKo: "폴 - 빅 씨프" },
+        { src: "songs/song15.mp3", title: "Freeze - Babyfather", titleKo: "프리즈 - 베이비파더" },
+        { src: "songs/song16.mp3", title: "For Lovers - Pete Doherty", titleKo: "포 러버스 - 피트 도허티" },
+        { src: "songs/song17.mp3", title: "Dedicated to the One I Love - SALEM", titleKo: "내가 사랑하는 사람에게 바침 - SALEM" }
+      ];
+      var currentSongIndex = 0;
+
+      function getDisplayTitle(index) {
+        var lang = localStorage.getItem("vday_lang") || "en";
+        var song = songs[index];
+        return lang === "ko" && song.titleKo ? song.titleKo : song.title;
+      }
+
+      function playNextSong() {
+        currentSongIndex = (currentSongIndex + 1) % songs.length;
+        var nextSong = songs[currentSongIndex];
+        window.playSong(nextSong.src, nextSong.title, currentSongIndex);
+      }
+
+      function playPreviousSong() {
+        currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+        var prevSong = songs[currentSongIndex];
+        window.playSong(prevSong.src, prevSong.title, currentSongIndex);
+      }
+
+      window.playSong = function (src, title, index) {
         var audio = document.getElementById("global-audio");
         var nowPlaying = document.getElementById("now-playing");
+        var playerBox = document.getElementById("player-box");
         audio.src = src;
         audio.play();
-        nowPlaying.textContent = title || "Playing...";
+        if (index !== undefined) {
+          currentSongIndex = index;
+          nowPlaying.textContent = getDisplayTitle(index);
+        } else {
+          nowPlaying.textContent = title || "Playing...";
+        }
+        playerBox.style.display = "block";
       };
+
+      function updateNowPlayingLanguage() {
+        var playerBox = document.getElementById("player-box");
+        var nowPlaying = document.getElementById("now-playing");
+        if (nowPlaying && playerBox.style.display !== "none") {
+          nowPlaying.textContent = getDisplayTitle(currentSongIndex);
+        }
+      }
+
+      var globalAudio = document.getElementById("global-audio");
+      if (globalAudio) {
+        globalAudio.addEventListener("ended", function () {
+          playNextSong();
+        });
+      }
+
+      var nextButton = document.getElementById("next-button");
+      if (nextButton) {
+        nextButton.addEventListener("click", function () {
+          playNextSong();
+        });
+      }
+
+      var prevButton = document.getElementById("prev-button");
+      if (prevButton) {
+        prevButton.addEventListener("click", function () {
+          playPreviousSong();
+        });
+      }
+
+      var playerBox = document.getElementById("player-box");
+      var minimizeBtn = document.getElementById("minimize-btn");
+      var restoreBtn = document.getElementById("restore-btn");
+      if (playerBox && minimizeBtn && restoreBtn) {
+        minimizeBtn.addEventListener("click", function () {
+          playerBox.classList.add("minimized");
+        });
+        restoreBtn.addEventListener("click", function () {
+          playerBox.classList.remove("minimized");
+        });
+      }
+
+      var scrubBar = document.getElementById("scrub-bar");
+      var scrubCurrent = document.getElementById("scrub-current");
+      var scrubDuration = document.getElementById("scrub-duration");
+      if (globalAudio && scrubBar) {
+        function formatTime(seconds) {
+          if (!isFinite(seconds) || isNaN(seconds)) return "0:00";
+          var m = Math.floor(seconds / 60);
+          var s = Math.floor(seconds % 60);
+          return m + ":" + (s < 10 ? "0" : "") + s;
+        }
+        function updateScrubDisplay() {
+          var dur = globalAudio.duration;
+          var cur = globalAudio.currentTime;
+          if (dur && isFinite(dur)) {
+            scrubBar.max = dur;
+            scrubBar.value = cur;
+            scrubDuration.textContent = formatTime(dur);
+          }
+          scrubCurrent.textContent = formatTime(cur);
+        }
+        globalAudio.addEventListener("loadedmetadata", updateScrubDisplay);
+        globalAudio.addEventListener("timeupdate", updateScrubDisplay);
+        globalAudio.addEventListener("durationchange", updateScrubDisplay);
+        scrubBar.addEventListener("input", function () {
+          var t = parseFloat(scrubBar.value);
+          if (isFinite(t)) globalAudio.currentTime = t;
+        });
+        scrubBar.addEventListener("change", function () {
+          var t = parseFloat(scrubBar.value);
+          if (isFinite(t)) globalAudio.currentTime = t;
+        });
+      }
     </script>
   </body>
 </html>

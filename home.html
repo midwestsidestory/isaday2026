@@ -11,51 +11,59 @@
     <title>Home</title>
     <style type="text/css">
       body {
-        background: #cc9900;
+        background: #ffffff;
         color: #000000;
-        font-family: "Courier New", Courier, monospace;
+        font-family: "Times New Roman", Times, serif;
         margin: 0;
         padding: 2rem;
+        padding-top: 3rem;
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        min-height: 100vh;
       }
       .bigwhite {
-        font-family: "Courier New", Courier, mono;
+        font-family: "Times New Roman", Times, serif;
         font-size: 22px;
-        color: #ffffff;
+        color: #000000;
       }
       .bigboldwhite {
-        font-family: "Courier New", Courier, mono;
+        font-family: "Times New Roman", Times, serif;
         font-size: 22px;
-        color: #ffffff;
+        color: #000000;
         font-weight: 600;
       }
       a:link {
-        font-family: "Courier New", Courier, mono;
+        font-family: "Times New Roman", Times, serif;
         font-size: 24px;
         color: #000000;
         font-weight: 600;
         text-decoration: none;
       }
       a:visited {
-        font-family: "Courier New", Courier, mono;
+        font-family: "Times New Roman", Times, serif;
         font-size: 24px;
         color: #000000;
         font-weight: 600;
         text-decoration: none;
       }
       a:hover {
-        font-family: "Courier New", Courier, mono;
+        font-family: "Times New Roman", Times, serif;
         font-size: 24px;
         color: #000000;
         font-weight: 600;
-        text-decoration: underline;
+        text-decoration: none;
+        background-color: rgba(0, 0, 0, 0.05);
       }
       table {
         margin: 2rem auto;
+        margin-top: 50vh;
         width: 400px;
       }
       td {
-        padding: 0.5rem 0;
+        padding: 4rem 0;
         text-align: center;
       }
     </style>
@@ -68,74 +76,47 @@
         if (window.applyTranslations) applyTranslations();
       });
     </script>
-    <p class="bigboldwhite" data-t="title">For Priya</p>
-    <p class="bigwhite" data-t="intro1">
-      This is a site created for my love on our first Valentine's Day as a
-      couple. We cannot be together. She is very far away. I still have many
-      things I want to give her. Do for her. Say to her. I can express myself in
-      the only ways I know how. I don't have much in life, even though I've
-      given been everything. But I have her, and that is what matters. When you
-      have something like that. Special, you do what you can not to let go of
-      it. I will continue to devote myself to her. Give, give give give.
-    </p>
-    <p class="bigwhite" data-t="intro2">
-      I've collected some things here. Things I've worked on. For you. About
-      you, us. Some music, writing, pictures, drawings. Everything I care about.
-      I think is cool. I had to show you. Doing things like this is fun. It
-      makes me feel like everything I've ever learned mattered. It mattered
-      because I was able to show it to you one day. I was able to express myself
-      in a way that felt genuine. That someone would appreciate the things I
-      liked. Took the time to learn about me and enjoy what I had to show. Who I
-      am.
-    </p>
-    <p class="bigwhite" data-t="intro3">
-      What a woman she is. She's brought into me a warm light. Warm. So warm. I
-      can't be cold. I can't remember what it feels like. I have her. She makes
-      me forget. I was so cold. She saw me. She's throwin herself into my life.
-      My cold, crude, disgusting, and small life. So bright, beautiful, capable,
-      talented, brilliant, special. Golden hair soft to the touch, a perfect
-      smile, slender frame, tender eyes, safe, inviting, welcoming, home. She
-      asks me about my dreams, she tells me that I can do it. I can do it, I
-      can. She tells me I can reach what it is I dream of. My end goal. The
-      pinnacle of my life. If everything in the world were to work out as we
-      intended. What we seek, what makes us whole. What makes us real. Feel
-      human. Alive. Happy, sad, angry, jealous, hurt. What makes us comfortable,
-      what makes us laugh, cry, retreat. To brave, to hide, to speak. Learn,
-      understand, grow, endure and everything else that ever existed. Well, I
-      dream of her.
-    </p>
-    <p class="bigwhite" data-t="intro4">
-      This site doesn't really make sense. It can come across as many things.
-      But it's me, and it's for you. It's one form of expression of my many
-      forms of expression. It's my most vulnerable and expressive self, all laid
-      out for the sole sake of sharing myself with the one I love, which is you
-      Priya. I hope you find it interesting, enjoyable, special, visceral, and
-      cool.
-    </p>
+    <p class="bigboldwhite" style="font-style: italic;" data-t="isabelle">For Isabelle</p>
+    <div style="margin: 8rem 0 2rem 0;">
+      <img
+        src="photos/isabelle.png"
+        alt="Illustration of Isabelle"
+        style="max-width: 320px; width: 100%; height: auto;"
+      />
+    </div>
+    <a href="fightmehoe.html" style="display: block; margin-top: 10.5rem; text-align: center;">
+      <img
+        src="photos/fight-me-hoe.png"
+        alt="Fight me hoe"
+        style="max-width: 280px; width: 100%; height: auto; margin-left: auto; margin-right: auto;"
+      />
+    </a>
     <table align="center">
       <tr>
         <td>
           <a href="playlist.html" data-t="link_playlist"
-            ><b
-              >- A playlist of music that is special to me that I want you to
-              hear whenever you visit this site</b
-            ></a
+            ><b>Music</b></a
           >
         </td>
       </tr>
       <tr>
         <td>
           <a href="drawing.html" data-t="link_drawing"
-            ><b>- Through my eyes.</b></a
+            ><b>Writing</b></a
           >
         </td>
       </tr>
       <tr>
         <td>
           <a href="story.html" data-t="link_story"
-            ><b
-              >- A story about some twisted romance - Happy Valentine's Day</b
-            ></a
+            ><b>Art</b></a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="photo.html" data-t="link_photo"
+            ><b>Photo</b></a
           >
         </td>
       </tr>

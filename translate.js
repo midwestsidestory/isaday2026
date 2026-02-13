@@ -9,15 +9,21 @@
     document.querySelectorAll("[data-t]").forEach(function (el) {
       var key = el.dataset.t;
       var text = null;
-      if (el.dataset.tEn && el.dataset.tFr) {
-        text = l === "fr" ? el.dataset.tFr : el.dataset.tEn;
+      if (el.dataset.tEn && (el.dataset.tKo || el.dataset.tFr)) {
+        // Prefer explicit Korean attribute, but fall back to the old French one
+        // if it still exists for backwards compatibility.
+        if (l === "ko") {
+          text = el.dataset.tKo || el.dataset.tFr;
+        } else {
+          text = el.dataset.tEn;
+        }
       } else if (t) {
         var page = document.body.dataset.translatePage || "home";
         var tr = t[page];
         if (tr && tr[key]) {
-          if (l === "fr" && tr[key].fr) {
+          if (l === "ko" && tr[key].ko) {
             if (!el.dataset.originalEn) el.dataset.originalEn = el.innerHTML;
-            text = tr[key].fr;
+            text = tr[key].ko;
           } else if (l === "en" && el.dataset.originalEn) {
             text = el.dataset.originalEn;
           } else if (l === "en" && tr[key].en) {

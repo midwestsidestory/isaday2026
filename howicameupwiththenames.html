@@ -14,9 +14,9 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <style type="text/css">
       body {
-        background: #cc9900;
+        background: #ffffff;
         color: #000000;
-        font-family: "Courier New", Courier, monospace;
+        font-family: "Times New Roman", Times, serif;
         margin: 0;
         padding: 0;
       }
@@ -463,9 +463,9 @@
           <div
             style={{
               minHeight: "100vh",
-              background: "#CC9900",
+              background: "#FFFFFF",
               padding: "2rem",
-              fontFamily: '"Courier New", Courier, monospace',
+              fontFamily: '"Helvetica", "Arial", sans-serif',
             }}
           >
             <div
@@ -477,9 +477,9 @@
             >
               <h1
                 style={{
-                  fontFamily: '"Courier New", Courier, monospace',
+                  fontFamily: '"Times New Roman", Times, serif',
                   fontSize: "22px",
-                  color: "#FFFFFF",
+                  color: "#000000",
                   fontWeight: 600,
                   marginBottom: "1rem",
                 }}
@@ -488,9 +488,9 @@
               </h1>
               <p
                 style={{
-                  fontFamily: '"Courier New", Courier, monospace',
+                  fontFamily: '"Times New Roman", Times, serif',
                   fontSize: "16px",
-                  color: "#FFFFFF",
+                  color: "#000000",
                   marginBottom: "1.5rem",
                 }}
               >
@@ -500,7 +500,7 @@
                 onClick={findMatches}
                 disabled={isSearching}
                 style={{
-                  fontFamily: '"Courier New", Courier, monospace',
+                  fontFamily: '"Times New Roman", Times, serif',
                   fontSize: "24px",
                   fontWeight: 600,
                   color: "#000000",
@@ -516,9 +516,9 @@
                 <div style={{ marginTop: "2rem", textAlign: "left" }}>
                   <h2
                     style={{
-                      fontFamily: '"Courier New", Courier, monospace',
+                      fontFamily: '"Times New Roman", Times, serif',
                       fontSize: "22px",
-                      color: "#FFFFFF",
+                      color: "#000000",
                       fontWeight: 600,
                       marginBottom: "1rem",
                     }}
@@ -530,11 +530,11 @@
                     <div
                       key={idx}
                       style={{
-                        background: "#000000",
-                        color: "#FFFFFF",
+                        background: "#FFFFFF",
+                        color: "#000000",
                         padding: "1rem 1.5rem",
                         marginBottom: "1rem",
-                        border: "2px solid #FFFFFF",
+                        border: "2px solid #000000",
                       }}
                     >
                       <div
@@ -550,12 +550,12 @@
                           style={{
                             fontSize: "22px",
                             fontWeight: 600,
-                            color: "#FFFFFF",
+                            color: "#000000",
                           }}
                         >
                           {match.original}
                         </span>
-                        <span style={{ color: "#CC9900", fontSize: "20px" }}>
+                        <span style={{ color: "#000000", fontSize: "20px" }}>
                           →
                         </span>
                         <span
@@ -578,11 +578,11 @@
                         {match.steps.map((step, i) => (
                           <div
                             key={i}
-                            style={{ fontSize: "14px", color: "#FFFFFF" }}
+                            style={{ fontSize: "14px", color: "#000000" }}
                           >
                             <span
                               style={{
-                                fontFamily: '"Courier New", Courier, monospace',
+                                fontFamily: '"Times New Roman", Times, serif',
                               }}
                             >
                               {step.char} + {step.shift} = {step.result}
@@ -598,7 +598,7 @@
                 <div
                   style={{
                     marginTop: "2rem",
-                    color: "#FFFFFF",
+                    color: "#000000",
                     fontSize: "16px",
                     textAlign: "center",
                   }}

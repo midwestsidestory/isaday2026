@@ -11,21 +11,30 @@
     <title>Story</title>
     <style type="text/css">
       body {
-        background: #000;
+        background: #ffffff;
         margin: 0;
         padding: 0;
       }
       a:link,
       a:visited,
       a:hover {
-        color: #fff;
+        color: #000000;
       }
       .header {
         text-align: center;
-        font-family: "Courier New", Courier, mono;
-        color: #ffffff;
+        font-family: "Times New Roman", Times, serif;
+        color: #000000;
         font-size: 22px;
         padding: 1rem 0;
+      }
+      .header a {
+        padding: 0.2rem 0.5rem;
+        border-radius: 2px;
+        transition: background-color 0.2s;
+        display: inline-block;
+      }
+      .header a:hover {
+        background-color: rgba(0, 0, 0, 0.05);
       }
       .header b {
         font-size: 1.2em;
@@ -35,22 +44,22 @@
         width: 800px;
         max-width: 90%;
         text-align: left;
-        font-family: "Courier New", Courier, mono;
+        font-family: "Times New Roman", Times, serif;
         font-size: 1.2em;
-        color: #fff;
+        color: #000000;
         padding: 2rem 0;
       }
       .content h2 {
-        font-family: "Courier New", Courier, mono;
-        color: #fff;
+        font-family: "Times New Roman", Times, serif;
+        color: #000000;
         font-size: 1.5em;
       }
       .placeholder {
         font-size: 2em;
         text-align: center;
         padding: 4rem 2rem;
-        color: #fff;
-        font-family: "Courier New", Courier, mono;
+        color: #000000;
+        font-family: "Times New Roman", Times, serif;
       }
     </style>
   </head>
@@ -59,7 +68,10 @@
     <script src="translate.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        if (window.applyTranslations) applyTranslations();
+        if (window.applyTranslations) window.applyTranslations();
+      });
+      window.addEventListener("languagechange", function () {
+        if (window.applyTranslations) window.applyTranslations();
       });
     </script>
     <div class="header">
@@ -72,285 +84,14 @@
     </div>
 
     <div class="content">
-      <h2 data-t="title">
-        We're Red and It's Perfect. She's dead, and it's beautiful.
-      </h2>
-      <p class="placeholder" data-t="content">
-        Tears well up in my eyes. It hurts, why. Everyone's laughing at me. I
-        can feel them staring at me. I was wearing my mothers gown. At school.
-        How did this happen? The entire school was there, in the hall, in the
-        hall, and I was there, embarrassed. Scorned. But I was just dreaming.
-        The cicadas cry in the summer. Incessantly. I was dreaming. Again. I
-        haven’t been to school in a while. It was summer though, a particularly
-        hot one. I left my window open overnight. There was a fly buzzing around
-        my ear. More than one. June is a long month for me, but at least I can
-        stay home. My father passed away in June. It'll be about a year from
-        tomorrow. The latchkey kids are playing out in the street, I can hear
-        them. They laugh incessantly. I get out of bed. It's routine for me. I
-        don’t usually get out of bed. Only when I can no longer stand the taste
-        of my own breath. But this morning was different. I hear Mom on the
-        phone downstairs. I get curious about my mother’s calls. She’s very
-        private, but from what I’ve understood, she talks to many men, each time
-        with a different name. She’s been shopping a lot more recently, so I
-        assume it pays. Her new sweaters are colorful, a little too colorful for
-        me. And the prints.. “What did I tell you about leering in on my phone
-        calls!” She’s caught me again. “Don’t give me that fuckin look, its
-        creepy. You’re a creep, just like your father!” I often contort my face,
-        I can’t really help it, it just goes that way. My mother didn’t much
-        care for me, as is why I haven’t been to school in months. But I guess
-        that’s the status quo these days. Parents don’t worry too much about
-        who, where, or what their children are up to. I removed myself from the
-        hall, away from the landline to give my mother the privacy she desired.
-        I feel hungry today. We don’t keep much food in the house. My mother’s
-        always eating out. On dates at those flashy late-night lounges. She
-        didn’t feel a need. I'm a few years out from being an adult now. Old
-        enough to no longer require my mother’s cooking, even though that was
-        always few and far between. I’ll go for a walk. It’s hot out. Like I
-        said. It’s June. I have my cassette player with me. I hate a lot of
-        things, I’ve learned to hate a lot of things. Not by choice, but as a
-        necessity. Hate was good. Hate was normal. My mother hated my father, my
-        father hated me. So you would think because my mother hated my father
-        and my father hated me, the one who bore the most hatred from the man
-        she hated above all would get some relief. But this was not the case.
-        She hated me just as much as she hated that man. I was given his face.
-        His vulgar, disfigured face. I love music. I’m particularly into a lot
-        of the current hot New Wave bands. Duran Duran, The Cure, Talking heads.
-        Springsteen was a genius, Madonna was for fags. I appreciated Madonna,
-        although I wasn’t a fag. Apart from my father’s dashing good looks, I
-        inherited his love for women. My father loved women. He loved them a
-        little too much. I don’t blame my mother for hating him. I can say this;
-        he died <em>doing</em> what he loved. As I walk through the
-        neighborhood, towards town, I pass by a park. I see a girl there,
-        sitting on a swing. She’s surrounded by three other girls. I can’t make
-        out what they're saying, but it’s a familiar scene. I know those three
-        girls. Not that I know them personally, but I know the type. My mother
-        is away from home quite often. Often enough, and long enough, for me to
-        enjoy myself when I know no one's watching. It’s a nightly ritual. Those
-        three girls standing there. Those girls. The type of girls that often
-        frequent my imagination during my nighttime activities. The type of
-        girls who would surround her on the swing, full intimidation, perfect
-        formation. I'm sure they aren't friends. I stop and watch. From afar.
-        “Hey! I just love your blouse…” “Yeah! Yeah! I like your leggings too!
-        So colorful! They're just perfect, you must tell me where you got them!”
-        “You guys are so funny… why would you ever want to dress like a dyke,
-        she looks hilarious!” “Hahaha we're just kidding, I could never. What a
-        queer… and look at that blank stare on her face, it's so hideous!” The
-        girls continue with their insults, I watch the proceedings from a safe
-        distance, interested in the direction things are going. They begin to
-        grab her shirt, lifting it up, exposing her. One of the girls pulls out
-        a small pocket knife, the other two hold her arms up. It’s interesting.
-        She doesn’t seem to react. She’s like a corpse. Her face hardly changes.
-        The girl with the knife begins carving into her stomach. The other two
-        laugh. I catch a glimpse of her face, no reaction. It’s impressive. I
-        couldn’t say that I would be able to stay as stone cold as she was. The
-        girls finish their engraving, the marking barely legible from my line of
-        sight. Seemingly satisfied, the three begin to walk off, smirking and
-        cackling amongst each other, putting out their cigarettes all over her
-        before they disappear out of view. Like I said before, it’s interesting.
-        Out of curiosity–and bordem–I walk over. She’s laying face up at this
-        point, still wearing the same blank stare she had on during the previous
-        encounter. I stand overtop of her, the word “dyke” clearly visible to me
-        now. I don’t say anything, I am just interested in her face. It’s
-        unnerving, unmoving, unbreakable. It’s beautiful. As the blood drips
-        down her stomach, seeping into the dirt, she remains still. I follow her
-        eyes. They're looking up. Not at the sky, not at the clouds, not at the
-        birds, not at the rays of sunlight. Something higher, much further than
-        I could see. Outstanding. “What’s your name?” I ask. “It’s dyke” “What’s
-        your name?” I ask, ignoring her first response. “Like I said before,
-        it’s dyke” “I was watching you before. You never told those girls your
-        name, and I don't think they knew you. So how did they know what name to
-        carve into your stomach?” I act smart. “Lucky guess.” She’s annoying me,
-        but she looks beautiful. Her gaze that is. That blank look. I get
-        curious again. I want to see what other faces she might make. I grab a
-        clump of dirt, her blood has fully seeped into it now. In my hand,
-        balled into a fist, I shove the dirt directly into her open wound,
-        making sure to spread it across her entire stomach. She leaps up,
-        howling in pain. I see a new expression, I see her teeth as she screams.
-        It’s simply beautiful, I've never seen anything like it. As I am
-        entranced by her mouth, now wide open, I fail to respond when she sinks
-        her teeth directly into my shoulder. An act of retaliation. Through my
-        shirt, her teeth pierce my skin. I’m met with a sharp pain–a new
-        sensation. I cry out, fall to the ground. She’s on top of me now, the
-        blood and dirt from her stomach dripping onto me. She’s latched onto my
-        collarbone, her teeth are deep into my shoulder. I feel a burning pain
-        throughout my body. I am unable to move. Time passes, maybe a few
-        minutes? Lost in this new feeling, I come to my senses. “Ouch! Get the
-        fuck off me you crazy bitch!” I shove her to the ground. I get up and
-        collect my bearings, but she's a fighter. I feel a similar
-        sensation–this time, on my left calf muscle. She’s bit me again. I fall
-        on my rear. But I fight back. I scratch at her stomach, each slash I can
-        feel her engraving opening wider, the warmth of her blood underneath my
-        fingernails. This goes on for a while. I start to get lightheaded, her
-        movements match mine. We fall to the ground. Lying in the dirt. More
-        time passes. I wake up to the blistering sun, and a burning body. She’s
-        bit me. She’s scratched me. I’m bleeding, but it doesn’t really hurt.
-        She’s still unconscious, laying face up in a similar fashion as before.
-        This time, I lay down next to her. I try to mimic the blank expression
-        she wore when I first walked over, but I have no one to confirm its
-        accuracy. She wakes up after a while of me sunbathing. She doesn’t move,
-        but I hear her breathing shift. I glance over. This is the first time I
-        get a closer look at her. She has messy red curly hair, a crooked face,
-        freckles, a hooked jew nose, and big bushy eyebrows. Frankly she’s
-        hideous. But she’s beautiful. The most beautiful thing I've ever seen.
-        As I lay there, beside myself, I remember something. Something I almost
-        forgot. Something that felt so distant, a feeling from a lifetime ago. I
-        was hungry. I hadn’t eaten. I turned to her again. “Come into town with
-        me, I am going to get something to eat” She doesn't react, which doesn’t
-        surprise me. I omit any sort of follow up. I stand, grab my cassette,
-        now covered in dirt, and walk back in the direction I was heading. As I
-        make it a few steps away, I hear her shuffling behind me. I turn and see
-        her standing, inching towards me. I wait for her to catch up. We walk in
-        stride, in silence. I'm an awkward guy, I'm many things. A melomaniac, a
-        ciniphile, a racist, a masochist, a sadist, a homophobe, an artist, a
-        poet, a pervert. But above all else, I’m awkward. As we walk together,
-        nearly hand in hand, I am overwhelmed with this feeling of awkwardness.
-        As any awkward guy would do, I scramble for something to fill this
-        silence. As my eyes dart around, I remember what I have with me, and who
-        I am. “So you must like music right… Who are your favorite bands? What
-        album are you currently listening to? Right now I'm really int-” “No, I
-        don't listen to music” She replies curtly. “What about movies? Do you
-        have any favorite movies?” “No, not particularly” “Well… what about
-        books? Im sure you've read Ludlum-” “No” Fuck. This girl was impossible
-        to talk to. But I couldn't help it. She was frumpy, plain, gaudy, but
-        the most beautiful thing I've ever seen in the entire world. I forfeit
-        any other attempts at conversation. We continue our walk, passing by a
-        school, a church, a grocer, gas stations, benches, and vagrants. We
-        reach a corner, there's a hotdog stand. A small line, not too long of a
-        wait. I half guide us over there, stepping in the back of the line. As I
-        stand in line with her, I am able to closely examine her legs. There are
-        several scars running up and down the inside of her thighs. She’s
-        wearing very small shorts, I can see the hairs on her legs, unshaved.
-        I'm getting excited, but the large paper mache hotdog atop the hotdog
-        stand brings me back to reality. As we get to the front, I order us two
-        hotdogs. Extra mustard, no ketchup. I pay with the coins I brought with
-        me from home. We sat down at the nearby picnic bench. To my surprise,
-        she sits next to me, as opposed to across. “Do you like hotdogs? I think
-        they’re great in the sum–” “No, I don’t eat meat” She says in a deadpan
-        tone. By this point, I'm not surprised. I choke down both of the
-        hotdogs. She remains next to me. I can feel her glancing at me every so
-        often. I get nervous. I'm shy, and awkward. I've never actually sat down
-        and ate with a girl before. It’s new, it’s exciting. All of my previous
-        attempts at starting a conversation were in vain. But I get an idea.
-        Something pops up into my head. A thought that only a twisted pervert
-        like me could concoct. A disgrace. “I get real horny when I bleed… Do
-        you?” There. I went and did it. Any other circumstance would've been a
-        no-go, but given that we were walking around in public, shirts covered
-        in blood with open wounds all over, I figured I'd better give it a shot.
-        Nothing else worked, so why the hell not? “Yeah” Finally, a response
-        that didn't begin with the word “No”. I was happy. This was progress.
-        Little by little. I was getting excited again. I could barely contain
-        myself. I was foolish to ever think I could replicate her stone cold
-        poker face for even a second. My mother tells me all the time how
-        hideous my face is. It contorts to every emotion I feel. What can I say?
-        I can’t really help it. She can totally see exactly how excited I am
-        right now. I was right. I see her eyes locked on to me. She’s looking at
-        me– directly. I think for the first time since I met her. She doesn’t
-        take her eyes off me. It’s been a while. It’s intense. I don't know how
-        much longer I can take it. I'm going to finish… Right before I finish
-        that thought, she moves her face closer. The motion of her face being
-        brought closer to mine replays in my head. All while it's happening in
-        real time. It plays over, and over. Slow, fast, on repeat, fast, slow. I
-        feel my face getting hot. Her face is almost touching mine. I
-        instinctively close my eyes– I don't know why, I've never been in this
-        position before. As my eyes are closed, my lips move on their own. I'm
-        sure I look like a spaz. As I prepare for the first kiss of my life, it
-        feels harder than I expect. Instead of the embrace of some soft, wet
-        lips, I feel abrasive enamel. My lips are pinched together, a sharp pain
-        overtakes my lower face, and it doesn't stop. She’s biting my mouth.
-        She’s biting my mouth, and she's not letting up. It hurts. It hurts it
-        hurts it hurts. It hurts so good. If I said before that I was going to
-        finish something, well I was in the middle of finishing it now. It’s
-        possible 5 more minutes go by, or maybe 5 years, maybe 5 millennia. I
-        have no idea. Time passes. And my underwear is now soggy. She lets up.
-        And looks at me again. This time, her gaze looks different. It looks as
-        though she’s now looking down at a cockroach in her bedroom. One that
-        she has just squashed, and is watching writhe in pain before it loses
-        all oxygen. I burst out of my seat, my face beet red. I am overcome with
-        embarrassment. I need to get out of here now. Before I make my grand
-        escape, I mumble something to her. “Come again, by the swings. Maybe
-        tomorrow. Please?” I turn and run home before I can look at her face,
-        before I can confirm her reply. I sprint home, fast. I'm excited. I'm
-        not a boy anymore, I'm a man. I'm in love. I'm a man in love. As I run
-        home, I trip. I skin my leg, the same leg she dug her teeth into. It
-        feels like an insult. This doesn’t feel nice. But it doesn’t matter.
-        Nothing can ruin my mood. I'm on cloud nine. I'm elated. I'm elated. I'm
-        a man. I made it. I want to tell my mom, mother. I want to tell her
-        everything, I want her to know she’s wrong. I'm loved.
-        <em
-          >I'm leaving. I don’t know when I'll be back. You're old enough now, I
-          don't need to be wasting my time hovering around you anymore – Mom</em
-        >. It’s too late. As I arrive at home, I read a note left stuck to the
-        fridge. Mom’s left. My mother, the great woman she was. Gone. It appears
-        she's jet off to Monaco, Italy, Greece, Thailand, or any one of the
-        other prostitute wastelands. To live with one of her so-called
-        benefactors, husband, sugar daddy, lover. I don't care what she calls
-        them. They're pimps. Pimping her out for money. That's it. Money. A
-        waste, useless, horrid, disgusting money. Far more degenerate than
-        anything I could ever do. And she's nothing to them. Nothing but their
-        whore. One whore of many whores. One whore, two whore, red whore, blue
-        whore. One-hundred whores, One-thousand whores. Whores galore. It's
-        disgusting, and I want nothing to do with it. I'm glad. I'm glad she's
-        gone. She never cared for me anyway. And I don't need her anymore. I'm
-        loved. There's a girl that cares about me. Someone out there that is
-        willing to hurt me. Hurt me because she loves me. That night I had the
-        best sleep of my life. I dreamt of her, bathing in blood. I'm no longer
-        in school. I'm no longer in my mother’s gown. Nobody’s laughing, I'm not
-        scorned. I'm loved. I'm enveloped in a red bath of our blood. It’s warm.
-        So warm. I never want to leave. I woke up the next morning. I've
-        ejaculated in my pants. It’s warm. I'm warm. The sun is shining down on
-        me. Its rays tickle me. I'm warm. The latchkey kids are playing outside.
-        Their usual antics. Their screams and laughs massage my ears. I'm warm.
-        I skipped breakfast this morning. I'm not hungry. Instead get dressed.
-        Laundry is done. Perfect. Mom washed the whites before she left. I put
-        on my brightest white t-shirt. I'm excited for the shade of red it will
-        be when I return this evening. It's about noon now. I step outside. The
-        blistering sun soothes me. It’s nice. It’s warm. I see her again. She’s
-        laying face up, like last time. It seems the girls have paid her a visit
-        again. Fresh marks, this time all over her arms and legs. Perfect. More
-        places for me to violate. We fight. We dance. We touch. It hurts. And it
-        hurts all over. I feel as though we become one. My body eventually grows
-        numb from the pain. It burns everywhere. I feel like I'm on fire. I can
-        barely breathe. Her marks stretch every inch of my body. With every new
-        mark, the deeper into my flesh she dives. Perfect. My days go on.
-        Everyday, a new wound. With each day. More blood is spilled. I've lost
-        weight. Maybe I've skipped breakfast one too many mornings, maybe I've
-        lost too much blood. I don't care. It’s fall now. The leaves on the
-        ground offer too much cushioning for our daily activities. It makes it
-        soft, gentle. I don't like it. I can't wait for winter. It's January
-        now. I think a new year? Maybe 1987 now? I can't be sure. We've met
-        every day without fail. I guess this is what it means to be in a long
-        term relationship. I love it. The colder days make for an even more
-        pleasurable experience. I'm sure she feels the same. We haven't said a
-        word to each other since the first day we met. We don't need to. That's
-        not how we communicate. I've lost a considerable amount of weight now. I
-        can tell. I don't often look at myself in the mirror, but on the rare
-        occasion I do, it's always a surprise. I can feel my body getting
-        weaker, but it's better that way. It makes the pain more potent. I'm
-        sure she feels the same. It's February now. The days are freezing. But
-        we don't dress for the cold. Only a tshirt. A tshirt as proof of the
-        blood we exchange. Our flesh needs to be as close together as it can be.
-        This is how we've always done things. Today’s a particularly cold day.
-        But even so, I feel so warm. She makes me feel so warm. This is what
-        love is supposed to feel like. It's supposed to hurt. Today she's going
-        easy on me, her bites don't burn and her scratches don't cut as deep. Is
-        she getting weaker? It’s annoying. Is this our first fight as a couple?
-        I push her harder, I squeeze her harder, as a way to encourage her to
-        turn up the heat a little bit. I think this will work… It always has.
-        It's not working. Instead she's loosening up her grip even more. It's
-        like she's not even trying. She's gone limp. Now I'm getting really
-        annoyed. She's completely stopped trying. I'm forced to let go and look
-        at her now. Look at her face close up again, so I can see what the deal
-        is. She's lying face down in the snow this time, that's unusual. Oh
-        wait. She's dead. It’s beautiful.
-      </p>
-      <p style="text-align: center; margin-top: 2rem">
-        <a
-          href="howicameupwiththenames.html"
-          style="text-decoration: none; font-weight: 600"
-          data-t="their_names"
-          >Their names</a
-        >
-      </p>
+      <div style="text-align: center; padding: 2rem 0;">
+        <img
+          src="photos/parliament.png"
+          alt="Parliament cigarettes pack"
+          style="max-width: 320px; width: 100%; height: auto;"
+        />
+        <p style="margin-top: 1.5rem; font-family: 'Times New Roman', Times, serif; font-size: 1.2em; color: #000;" data-t="wallet_caption">A wallet made by you, for me</p>
+      </div>
     </div>
   </body>
 </html>

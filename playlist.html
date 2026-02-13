@@ -11,48 +11,58 @@
     <title>Playlist</title>
     <style type="text/css">
       body {
-        background: #000;
+        background: #ffffff;
         margin: 0;
         padding: 0;
       }
       a:link,
       a:visited,
       a:hover {
-        color: #fff;
+        color: #000000;
       }
       .header {
         text-align: center;
-        font-family: "Courier New", Courier, mono;
-        color: #ffffff;
+        font-family: "Times New Roman", Times, serif;
+        color: #000000;
         font-size: 22px;
         padding: 1rem 0;
       }
       .header a {
         text-decoration: none;
         font-weight: 600;
+        padding: 0.2rem 0.5rem;
+        border-radius: 2px;
+        transition: background-color 0.2s;
+      }
+      .header a:hover {
+        background-color: rgba(0, 0, 0, 0.05);
       }
       .content {
         margin: auto;
         width: 800px;
         max-width: 90%;
-        text-align: left;
-        font-family: "Courier New", Courier, mono;
+        text-align: center;
+        font-family: "Times New Roman", Times, serif;
         font-size: 1.2rem;
-        color: #fff;
-        padding: 2rem 0;
+        color: #000000;
+        padding: 4rem 0 2rem 0;
       }
       .content h2 {
-        font-family: "Courier New", Courier, mono;
-        color: #fff;
+        font-family: "Times New Roman", Times, serif;
+        color: #000000;
         font-size: 1.5em;
       }
       .song-link {
-        color: #fff;
+        color: #000000;
         cursor: pointer;
         text-decoration: none;
+        padding: 0.2rem 0.4rem;
+        border-radius: 2px;
+        transition: background-color 0.2s;
       }
       .song-link:hover {
-        text-decoration: underline;
+        text-decoration: none;
+        background-color: rgba(0, 0, 0, 0.05);
       }
       .song-list {
         margin-top: 1.5rem;
@@ -64,76 +74,163 @@
     <script src="translate.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        if (window.applyTranslations) applyTranslations();
+        if (window.applyTranslations) window.applyTranslations();
+      });
+      window.addEventListener("languagechange", function () {
+        if (window.applyTranslations) window.applyTranslations();
       });
     </script>
     <div class="header">
       <a href="home.html" data-t="home">Home</a>
     </div>
 
-    <div class="content">
-      <h2 data-t="title">To Priya,</h2>
-      <p data-t="intro">
-        <b
-          >Here are some songs that are very important to me. They mean
-          different things, and are from different points in my life, but they
-          are songs found by me, enjoyed by me, and me alone. Not for anybody
-          else. Until you. These are songs that I think are the most "me". You
-          asked me this in Belgium and I did not give you an answer. I thought
-          about it, and here is my answer. You can play these while you look
-          through everything else.</b
-        >
-      </p>
+      <div class="content">
+      <div style="margin-bottom: 2rem; text-align: center;">
+        <img
+          src="photos/kiss.png"
+          alt="Kiss"
+          style="max-width: 250px; width: 100%; height: auto; margin-bottom: 1.5rem;"
+        />
+      </div>
       <div class="song-list">
         <a
           href="#"
           class="song-link"
           data-src="songs/song1.mp3"
-          data-title="A Duel - Pablo's Eye"
-          >A Duel -</a
-        >
-        Pablo's Eye (5:29) <br />
+          data-title="Aurora - Quiet Light"
+          data-t="song1"
+          >Aurora - Quiet Light</a
+        ><br />
         <a
           href="#"
           class="song-link"
           data-src="songs/song2.mp3"
-          data-title="A Warm Place - Nine Inch Nails"
-          >A Warm Place -</a
-        >
-        Nine Inch Nails (3:23) <br />
+          data-title="Im On Fire - Bruce Springstein"
+          data-t="song2"
+          >Im On Fire - Bruce Springstein</a
+        ><br />
         <a
           href="#"
           class="song-link"
           data-src="songs/song3.mp3"
-          data-title="Printemps émeraude - Alcest"
-          >Printemps émeraude -</a
-        >
-        Alcest (7:19)<br />
+          data-title="Walking On Air - King Crimson"
+          data-t="song3"
+          >Walking On Air - King Crimson</a
+        ><br />
         <a
           href="#"
           class="song-link"
           data-src="songs/song4.mp3"
-          data-title="Arboretum - Unwound"
-          >Arboretum -</a
-        >
-        Unwound (4:55)<br />
+          data-title="As The World Falls Down - David Bowie"
+          data-t="song4"
+          >As The World Falls Down - David Bowie</a
+        ><br />
         <a
           href="#"
           class="song-link"
           data-src="songs/song5.mp3"
-          data-title="Nothing Else Matters - Bassvictim"
-          >Nothing Else Matters -</a
-        >
-        Bassvictim (2:55) <br />
+          data-title="RACHEL CUT - Dean Blunt"
+          data-t="song5"
+          >RACHEL CUT - Dean Blunt</a
+        ><br />
         <a
           href="#"
           class="song-link"
           data-src="songs/song6.mp3"
-          data-title="My Girl - The Rolling Stones"
-          >My Girl -</a
-        >
-        The Rolling Stones (2:38) <br />
+          data-title="Surrender - Suicide"
+          data-t="song6"
+          >Surrender - Suicide</a
+        ><br />
+        <a
+          href="#"
+          class="song-link"
+          data-src="songs/song7.mp3"
+          data-title="Halo - The Cure"
+          data-t="song7"
+          >Halo - The Cure</a
+        ><br />
+        <a
+          href="#"
+          class="song-link"
+          data-src="songs/song8.mp3"
+          data-title="Give You My Lovin - Mazzy Star"
+          data-t="song8"
+          >Give You My Lovin - Mazzy Star</a
+        ><br />
+        <a
+          href="#"
+          class="song-link"
+          data-src="songs/song9.mp3"
+          data-title="Streets of Philadelphia - Bruce Springstein"
+          data-t="song9"
+          >Streets of Philadelphia - Bruce Springstein</a
+        ><br />
+        <a
+          href="#"
+          class="song-link"
+          data-src="songs/song10.mp3"
+          data-title="Here I Am - The Hellp"
+          data-t="song10"
+          >Here I Am - The Hellp</a
+        ><br />
+        <a
+          href="#"
+          class="song-link"
+          data-src="songs/song11.mp3"
+          data-title="Simulation Swarm - Big Thief"
+          data-t="song11"
+          >Simulation Swarm - Big Thief</a
+        ><br />
+        <a
+          href="#"
+          class="song-link"
+          data-src="songs/song12.mp3"
+          data-title="The Rot - Dean Blunt"
+          data-t="song12"
+          >The Rot - Dean Blunt</a
+        ><br />
+        <a
+          href="#"
+          class="song-link"
+          data-src="songs/song13.mp3"
+          data-title="Please Stay - The Cryin Shames"
+          data-t="song13"
+          >Please Stay - The Cryin Shames</a
+        ><br />
+        <a
+          href="#"
+          class="song-link"
+          data-src="songs/song14.mp3"
+          data-title="Paul - Big Thief"
+          data-t="song14"
+          >Paul - Big Thief</a
+        ><br />
+        <a
+          href="#"
+          class="song-link"
+          data-src="songs/song15.mp3"
+          data-title="Freeze - Babyfather"
+          data-t="song15"
+          >Freeze - Babyfather</a
+        ><br />
+        <a
+          href="#"
+          class="song-link"
+          data-src="songs/song16.mp3"
+          data-title="For Lovers - Pete Doherty"
+          data-t="song16"
+          >For Lovers - Pete Doherty</a
+        ><br />
+        <a
+          href="#"
+          class="song-link"
+          data-src="songs/song17.mp3"
+          data-title="Dedicated to the One I Love - SALEM"
+          data-t="song17"
+          >Dedicated to the One I Love - SALEM</a
+        ><br />
       </div>
+      <p style="margin-top: 6rem; font-style: italic; text-align: center;" data-t="kiss_quote">I shall kiss you so much that they will mistake my mouth for yours</p>
     </div>
 
     <div
@@ -146,10 +243,7 @@
         background: #000;
         color: #fff;
         padding: 0.5rem 1rem;
-        font-family:
-          Courier New,
-          Courier,
-          mono;
+        font-family: "Times New Roman", Times, serif;
         font-size: 12px;
         border: 2px solid #fff;
         z-index: 1000;
@@ -166,15 +260,81 @@
         controls
         style="width: 100%; height: 32px"
       ></audio>
+      <div
+        style="
+          margin-top: 0.35rem;
+          display: flex;
+          gap: 0.35rem;
+          justify-content: center;
+        "
+      >
+        <button
+          id="local-prev-button"
+          style="
+            padding: 0.15rem 0.35rem;
+            background: #000000;
+            color: #ffffff;
+            border: 1px solid #ffffff;
+            cursor: pointer;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 10px;
+            font-weight: 600;
+            min-width: 26px;
+            line-height: 1.2;
+            text-align: center;
+          "
+        >
+          ◀◀
+        </button>
+        <button
+          id="local-next-button"
+          style="
+            padding: 0.15rem 0.35rem;
+            background: #000000;
+            color: #ffffff;
+            border: 1px solid #ffffff;
+            cursor: pointer;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 10px;
+            font-weight: 600;
+            min-width: 26px;
+            line-height: 1.2;
+            text-align: center;
+          "
+        >
+          ▶▶
+        </button>
+      </div>
     </div>
 
     <script>
-      function playSong(src, title) {
+      var songs = [
+        { src: "songs/song1.mp3", title: "Aurora - Quiet Light" },
+        { src: "songs/song2.mp3", title: "Im On Fire - Bruce Springstein" },
+        { src: "songs/song3.mp3", title: "Walking On Air - King Crimson" },
+        { src: "songs/song4.mp3", title: "As The World Falls Down - David Bowie" },
+        { src: "songs/song5.mp3", title: "RACHEL CUT - Dean Blunt" },
+        { src: "songs/song6.mp3", title: "Surrender - Suicide" },
+        { src: "songs/song7.mp3", title: "Halo - The Cure" },
+        { src: "songs/song8.mp3", title: "Give You My Lovin - Mazzy Star" },
+        { src: "songs/song9.mp3", title: "Streets of Philadelphia - Bruce Springstein" },
+        { src: "songs/song10.mp3", title: "Here I Am - The Hellp" },
+        { src: "songs/song11.mp3", title: "Simulation Swarm - Big Thief" },
+        { src: "songs/song12.mp3", title: "The Rot - Dean Blunt" },
+        { src: "songs/song13.mp3", title: "Please Stay - The Cryin Shames" },
+        { src: "songs/song14.mp3", title: "Paul - Big Thief" },
+        { src: "songs/song15.mp3", title: "Freeze - Babyfather" },
+        { src: "songs/song16.mp3", title: "For Lovers - Pete Doherty" },
+        { src: "songs/song17.mp3", title: "Dedicated to the One I Love - SALEM" }
+      ];
+      var currentSongIndex = 0;
+
+      function playSong(src, title, index) {
         if (
           window.parent !== window &&
           typeof window.parent.playSong === "function"
         ) {
-          window.parent.playSong(src, title);
+          window.parent.playSong(src, title, index);
         } else {
           var player = document.getElementById("local-player");
           var audio = document.getElementById("local-audio");
@@ -183,14 +343,52 @@
           audio.src = src;
           audio.play();
           nowPlaying.textContent = title || "Playing...";
+          if (index !== undefined) {
+            currentSongIndex = index;
+          }
         }
       }
-      document.querySelectorAll(".song-link").forEach(function (link) {
+
+      function playNextSong() {
+        currentSongIndex = (currentSongIndex + 1) % songs.length;
+        var nextSong = songs[currentSongIndex];
+        playSong(nextSong.src, nextSong.title, currentSongIndex);
+      }
+
+      function playPreviousSong() {
+        currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+        var prevSong = songs[currentSongIndex];
+        playSong(prevSong.src, prevSong.title, currentSongIndex);
+      }
+
+      document.querySelectorAll(".song-link").forEach(function (link, index) {
         link.addEventListener("click", function (e) {
           e.preventDefault();
-          playSong(this.dataset.src, this.dataset.title);
+          var songIndex = index;
+          playSong(this.dataset.src, this.dataset.title, songIndex);
         });
       });
+
+      var audio = document.getElementById("local-audio");
+      if (audio) {
+        audio.addEventListener("ended", function () {
+          playNextSong();
+        });
+      }
+
+      var localNextButton = document.getElementById("local-next-button");
+      if (localNextButton) {
+        localNextButton.addEventListener("click", function () {
+          playNextSong();
+        });
+      }
+
+      var localPrevButton = document.getElementById("local-prev-button");
+      if (localPrevButton) {
+        localPrevButton.addEventListener("click", function () {
+          playPreviousSong();
+        });
+      }
     </script>
   </body>
 </html>

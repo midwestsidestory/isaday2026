@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script>
+      if (window === window.top) {
+        window.location.replace("index.html?page=fightmehoe.html");
+      }
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fight me hoe</title>
+    <style type="text/css">
+      body {
+        background: #ffffff;
+        margin: 0;
+        padding: 0;
+      }
+      a:link,
+      a:visited,
+      a:hover {
+        color: #000000;
+      }
+      .header {
+        text-align: center;
+        font-family: "Times New Roman", Times, serif;
+        color: #000000;
+        font-size: 22px;
+        padding: 1rem 0;
+      }
+      .header a {
+        text-decoration: none;
+        font-weight: 600;
+        padding: 0.2rem 0.5rem;
+        border-radius: 2px;
+        transition: background-color 0.2s;
+      }
+      .header a:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+      }
+      .content {
+        margin: auto;
+        width: 800px;
+        max-width: 90%;
+        padding: 2rem 0;
+        min-height: calc(100vh - 5rem);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+      .content .message {
+        font-family: "Times New Roman", Times, serif;
+        font-size: 1.4em;
+        color: #000000;
+      }
+    </style>
+  </head>
+  <body data-translate-page="fightmehoe">
+    <script src="translations.js"></script>
+    <script src="translate.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (window.applyTranslations) window.applyTranslations();
+      });
+      window.addEventListener("languagechange", function () {
+        if (window.applyTranslations) window.applyTranslations();
+      });
+    </script>
+    <div class="header">
+      <a href="home.html" data-t="home">Home</a>
+    </div>
+    <div class="content">
+      <p class="message" data-t="message">Happy Valentine's Day Isa. I love you.</p>
+    </div>
+  </body>
+</html>

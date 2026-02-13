@@ -11,39 +11,45 @@
     <title>Drawing</title>
     <style type="text/css">
       body {
-        background: #000;
+        background: #ffffff;
         margin: 0;
         padding: 0;
       }
       a:link,
       a:visited,
       a:hover {
-        color: #fff;
+        color: #000000;
       }
       .header {
         text-align: center;
-        font-family: "Courier New", Courier, mono;
-        color: #ffffff;
+        font-family: "Times New Roman", Times, serif;
+        color: #000000;
         font-size: 22px;
         padding: 1rem 0;
       }
       .header a {
         text-decoration: none;
         font-weight: 600;
+        padding: 0.2rem 0.5rem;
+        border-radius: 2px;
+        transition: background-color 0.2s;
+      }
+      .header a:hover {
+        background-color: rgba(0, 0, 0, 0.05);
       }
       .content {
         margin: auto;
         width: 800px;
         max-width: 90%;
         text-align: left;
-        font-family: "Courier New", Courier, mono;
+        font-family: "Times New Roman", Times, serif;
         font-size: 1.2em;
-        color: #fff;
+        color: #000000;
         padding: 2rem 0;
       }
       .content h2 {
-        font-family: "Courier New", Courier, mono;
-        color: #fff;
+        font-family: "Times New Roman", Times, serif;
+        color: #000000;
         font-size: 1.5em;
         text-align: center;
       }
@@ -72,7 +78,7 @@
         bottom: 0;
         background: rgba(0, 0, 0, 0.5);
         color: #fff;
-        font-family: "Courier New", Courier, mono;
+        font-family: "Times New Roman", Times, serif;
         font-size: 1.2em;
         padding: 1rem;
         display: flex;
@@ -85,6 +91,19 @@
         overflow-wrap: break-word;
         min-width: 0;
       }
+      .poem-title {
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.3em;
+        margin-top: 5.25rem;
+        margin-bottom: 2rem;
+      }
+      .poem {
+        line-height: 1.8;
+        margin-top: 0;
+        text-align: center;
+        white-space: pre-line;
+      }
     </style>
   </head>
   <body data-translate-page="drawing">
@@ -92,7 +111,10 @@
     <script src="translate.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        if (window.applyTranslations) applyTranslations();
+        if (window.applyTranslations) window.applyTranslations();
+      });
+      window.addEventListener("languagechange", function () {
+        if (window.applyTranslations) window.applyTranslations();
       });
     </script>
     <div class="header">
@@ -100,76 +122,16 @@
     </div>
 
     <div class="content">
-      <h2 data-t="title">You've seen these.</h2>
-      <div class="photo-grid">
-        <div class="photo-cell">
-          <img src="photos/photo1.jpeg" alt="Photo 1" />
-          <div class="photo-caption" data-t="caption1">
-            She poses for me. Doesn't she look cute in my hat? We walk after a
-            meal together. It's cold and wet, but our stomaches are full. I
-            watched her eat her waffle and she watched me enjoy my steak. She
-            paid for it. How about that fuckers.
-          </div>
-        </div>
-        <div class="photo-cell">
-          <img src="photos/photo2.jpeg" alt="Photo 2" />
-          <div class="photo-caption" data-t="caption2">
-            We share a glass of wine. Some whiskey, but she hates it, one day
-            she'll learn. Our lips both touch the glass. I wish they could do
-            more together. She is the only thing with color in this photo. It's
-            nice here.
-          </div>
-        </div>
-        <div class="photo-cell">
-          <img src="photos/photo3.jpeg" alt="Photo 3" />
-          <div class="photo-caption" data-t="caption3">
-            I've made tea. It's a softer experience. I don't wake up as harshly
-            each morning as I usually do with my cigarette-coffee pairing. Its
-            better this way, thanks. It remiinds me to make breakfast.
-          </div>
-        </div>
-        <div class="photo-cell">
-          <img src="photos/photo4.jpeg" alt="Photo 4" />
-          <div class="photo-caption" data-t="caption4">
-            See? Not every photo has to be in black in white. Because in black
-            and white, you can feel muted. I can't make out your golden hair,
-            cool blue eyes, what color nails you had me pick out for you. The
-            color of your lips, blouse, or jeans. You look best in color.
-          </div>
-        </div>
-        <div class="photo-cell">
-          <img src="photos/photo5.jpeg" alt="Photo 5" />
-          <div class="photo-caption" data-t="caption5">
-            I've written a lot about airports recently. Here I am, at another
-            one. So I'm not going to write anymore. Here are my things. A few
-            pens, headphones, my bag, crumpled up photos of us, my wallet, my
-            passport, loose change, and the notebook you gave me.
-          </div>
-        </div>
-        <div class="photo-cell">
-          <img src="photos/photo6.jpeg" alt="Photo 6" />
-          <div class="photo-caption" data-t="caption6">
-            I love dancing with you. We understand each other. Our bodies
-            understand each other, they move in sync. I know how to move, you
-            know how to move. We know how to move. Why don't we get another
-            drink? So we can move longer together.
-          </div>
-        </div>
-        <div class="photo-cell">
-          <img src="photos/photo7.jpeg" alt="Photo 7" />
-          <div class="photo-caption" data-t="caption7">
-            Why is she looking down? I'm up here. I love when she looks at me.
-            She can look at me anyway she wants to.
-          </div>
-        </div>
-        <div class="photo-cell">
-          <img src="photos/phot8.jpeg" alt="Photo 8" />
-          <div class="photo-caption" data-t="caption8">
-            My bed's empty. She's not here. I miss her. I wish she was here. I
-            wish she was here now. But she left, the aftermath.
-          </div>
-        </div>
-      </div>
+      <p class="poem-title" data-t="poem_title">I imagine my life</p>
+      <p class="poem" data-t="poem">When I am feeling dreary, annoyed, and generally unimpressed with life,
+the only thing I can think of to do;
+Is of course the obvious thing to do. I think of you.
+
+I think of you and I think of all the time we spent together.
+All the moments and all the days and hours.
+I think of you and I in this space right here that we have made for each other.
+I imagine spending more than some years in this space with you…
+I imagine my life.</p>
     </div>
   </body>
 </html>
