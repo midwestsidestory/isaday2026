@@ -44,9 +44,41 @@
         padding: 2rem 0;
         min-height: calc(100vh - 5rem);
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
         text-align: center;
+      }
+      .polaroid {
+        display: inline-block;
+        background: #e8e0d0;
+        padding: 12px 12px 42px 12px;
+        box-shadow:
+          0 2px 8px rgba(80, 60, 40, 0.12),
+          0 8px 24px rgba(60, 45, 30, 0.1),
+          inset 0 0 0 1px rgba(0, 0, 0, 0.06);
+        transform: rotate(-1.5deg);
+        margin: 0 auto 2rem;
+        position: relative;
+      }
+      .polaroid::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+        pointer-events: none;
+      }
+      .polaroid img {
+        display: block;
+        max-width: 380px;
+        width: 100%;
+        height: auto;
+        filter: sepia(0.35) contrast(0.92) saturate(0.85) brightness(0.97);
+        position: relative;
+        z-index: 0;
       }
       .content .message {
         font-family: "Times New Roman", Times, serif;
@@ -70,6 +102,9 @@
       <a href="home.html" data-t="home">Home</a>
     </div>
     <div class="content">
+      <div class="polaroid">
+        <img src="photos/heart-balloon.png" alt="" />
+      </div>
       <p class="message" data-t="message">Happy Valentine's Day Isa. I love you.</p>
     </div>
   </body>
