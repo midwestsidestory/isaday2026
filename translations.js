@@ -29,6 +29,7 @@ window.TRANSLATIONS = {
     link_drawing: { en: "Writing", ko: "글" },
     link_story: { en: "Art", ko: "예술" },
     link_photo: { en: "Photo", ko: "사진" },
+    link_scan: { en: "Scan", ko: "스캔" },
     home: { en: "Home", ko: "홈" },
   },
   playlist: {
@@ -123,6 +124,9 @@ window.TRANSLATIONS = {
       en: "I will never stop staring at pictures of you",
       ko: "나는 네 사진을 계속 바라보는 걸 멈추지 않을 거야",
     },
+  },
+  scan: {
+    home: { en: "Home", ko: "홈" },
   },
   fightmehoe: {
     home: { en: "Home", ko: "홈" },

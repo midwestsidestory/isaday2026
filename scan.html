@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script>
+      if (window === window.top) {
+        window.location.replace("index.html?page=scan.html");
+      }
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scan</title>
+    <style type="text/css">
+      body {
+        background: #ffffff;
+        margin: 0;
+        padding: 0;
+      }
+      a:link,
+      a:visited,
+      a:hover {
+        color: #000000;
+      }
+      .header {
+        text-align: center;
+        font-family: "Times New Roman", Times, serif;
+        color: #000000;
+        font-size: 22px;
+        padding: 1rem 0;
+      }
+      .header a {
+        text-decoration: none;
+        font-weight: 600;
+        padding: 0.2rem 0.5rem;
+        border-radius: 2px;
+        transition: background-color 0.2s;
+      }
+      .header a:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+      }
+      .content {
+        margin: auto;
+        width: 800px;
+        max-width: 90%;
+        padding: 8rem 0 2rem 0;
+      }
+      .scan-frame {
+        display: block;
+        margin: 0 auto 8rem;
+        max-width: 420px;
+      }
+      .scan-frame:last-child {
+        margin-bottom: 0;
+      }
+      .scan-inner {
+        overflow: hidden;
+        position: relative;
+        line-height: 0;
+        border: 6px solid #0d0d0d;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      }
+      .content .scan-img {
+        display: block;
+        max-width: 100%;
+        width: auto;
+        height: auto;
+        margin: 0;
+        border: none;
+        outline: none;
+        transform: scale(1.085);
+        filter: sepia(0.06) contrast(1.1) saturate(1.15) brightness(1.02);
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+      }
+    </style>
+  </head>
+  <body data-translate-page="scan">
+    <script src="translations.js"></script>
+    <script src="translate.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (window.applyTranslations) window.applyTranslations();
+      });
+      window.addEventListener("languagechange", function () {
+        if (window.applyTranslations) window.applyTranslations();
+      });
+    </script>
+    <div class="header">
+      <a href="home.html" data-t="home">Home</a>
+    </div>
+    <div class="content">
+      <div class="scan-frame">
+        <div class="scan-inner">
+          <img class="scan-img" src="scans/scan1.png" alt="" />
+        </div>
+      </div>
+      <div class="scan-frame">
+        <div class="scan-inner">
+          <img class="scan-img" src="scans/scan2.png" alt="" />
+        </div>
+      </div>
+      <div class="scan-frame">
+        <div class="scan-inner">
+          <img class="scan-img" src="scans/scan3.png" alt="" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
